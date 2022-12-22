@@ -15,7 +15,6 @@ const Home = () => {
     return <>loading...</>;
   }
 
-  console.log(characters);
   return (
     <div className="home">
       <div className="home__title">
