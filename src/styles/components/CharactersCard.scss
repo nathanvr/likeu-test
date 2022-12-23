@@ -1,0 +1,19 @@
+.home__card {
+  margin: 1rem 1rem;
+  border: 1px solid lightgray;
+  padding: 0.5rem 0.5rem;
+  border-radius: 8px;
+  @include flex-bloc(center, center, wrap);
+  flex-direction: column;
+
+  .home__card__image {
+    img {
+      border-radius: 8px;
+      margin: auto;
+    }
+  }
+  .home__card__title {
+    color: var(--onyx);
+    text-align: center;
+  }
+}

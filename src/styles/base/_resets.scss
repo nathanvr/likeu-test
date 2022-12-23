@@ -7,7 +7,8 @@
 ul {
   list-style-type: none;
 }
-a {
+a,
+Link {
   text-decoration: none;
 }
 h1,
@@ -18,4 +19,9 @@ h5,
 h6,
 p {
   margin: 0;
+}
+button {
+  border: none;
+  background: none;
+  font-family: var(--font-family);
 }

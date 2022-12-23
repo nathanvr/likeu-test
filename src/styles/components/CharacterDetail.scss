@@ -1,0 +1,31 @@
+.character__title {
+  @include title;
+}
+
+.character__info {
+  @include flex-bloc(center, center, wrap);
+  margin-bottom: 3rem;
+}
+.character__episodes__title {
+  @include title;
+  margin: 0;
+}
+
+.character__episodes__btncontainer {
+  @include flex-bloc(center, center, wrap);
+
+  button {
+    border: 1px solid var(--fire);
+    padding: 4px 4px;
+    margin: 0.3rem 0.3rem;
+    background-color: var(--fire);
+    color: white;
+    width: 4rem;
+  }
+
+  button:hover {
+    color: var(--fire);
+    background-color: white;
+    cursor: pointer;
+  }
+}

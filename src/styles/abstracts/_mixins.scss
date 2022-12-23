@@ -1,0 +1,12 @@
+@mixin flex-bloc($justify, $align, $wrap) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-wrap: $wrap;
+}
+
+@mixin title() {
+  color: var(--sun);
+  text-align: center;
+  margin: 2rem;
+}

@@ -1,3 +1,10 @@
 @import "./styles/abstracts/variables";
+@import "./styles/abstracts/mixins";
 
 @import "./styles/base/resets";
+@import "./styles/base/base";
+
+@import "./styles/components/NavBar.scss";
+@import "./styles/components/Home.scss";
+@import "./styles/components/CharactersCard.scss";
+@import "./styles/components/CharacterDetail.scss";

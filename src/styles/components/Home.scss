@@ -1,0 +1,6 @@
+.home__title {
+  @include title;
+}
+.home__character__card {
+  @include flex-bloc(center, center, wrap);
+}
