@@ -31,22 +31,24 @@ const Home = () => {
   return (
     <div className="home">
       <div className="home__title">
-        <h1>Lista de personajes </h1>
+        <h1>Lista de Personajes </h1>
+        <hr></hr>
       </div>
-      <div className="home__character__card">
-        <InfiniteScroll
-          dataLength={page * 20}
-          next={() => setPage((prevPage) => prevPage + 1)}
-          hasMore={true}
-          loader={<h4>Loading...</h4>}
-        >
+
+      <InfiniteScroll
+        dataLength={page * 20}
+        next={() => setPage((prevPage) => prevPage + 1)}
+        hasMore={true}
+        loader={<h4>Loading...</h4>}
+      >
+        <div className="home__character__card">
           {data.results.map((character) => (
             <Link to={`character/${character.id}`} key={character.id}>
               <CharactersCard character={character} />
             </Link>
           ))}
-        </InfiniteScroll>
-      </div>
+        </div>
+      </InfiniteScroll>
     </div>
   );
 };

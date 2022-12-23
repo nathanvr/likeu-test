@@ -1,6 +1,6 @@
 .navbar {
   @include flex-bloc(flex-start, center, wrap);
-  height: 5rem;
+  height: 4rem;
   padding: 0 1rem;
   background-color: var(--fire);
   margin-bottom: 2rem;

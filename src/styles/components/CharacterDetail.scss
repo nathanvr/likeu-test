@@ -3,7 +3,6 @@
 }
 
 .character__info {
-  @include flex-bloc(center, center, wrap);
   margin-bottom: 3rem;
 }
 .character__episodes__title {

@@ -1,0 +1,26 @@
+.character__card {
+  @include flex-bloc(center, center, wrap);
+  gap: 1rem;
+}
+.character__card__image {
+  align-items: center;
+
+  img {
+    border-radius: 50%;
+  }
+}
+
+.character__card__body__title {
+  @include title;
+  margin-bottom: 0;
+}
+.character__card__body__info {
+  text-align: center;
+  p {
+    color: var(--onyx);
+    span {
+      color: var(--fire);
+      font-weight: bold;
+    }
+  }
+}
