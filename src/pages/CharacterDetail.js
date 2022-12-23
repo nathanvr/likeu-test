@@ -13,7 +13,7 @@ const CharacterDetail = () => {
     fetch(`https://rickandmortyapi.com/api/character/${id}`)
       .then((response) => response.json())
       .then((data) => setCharacter(data));
-  }, []);
+  }, [id]);
 
   if (!character) {
     return <>loading...</>;
