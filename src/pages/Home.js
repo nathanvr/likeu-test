@@ -6,6 +6,7 @@ import CharactersCard from "../components/CharactersCard";
 const Home = () => {
   const [data, setData] = useState({ info: {}, results: [] });
   const [page, setPage] = useState(1);
+  const [nextPage, setNextPage] = useState(true);
 
   // const character = [];
 
@@ -27,6 +28,9 @@ const Home = () => {
   if (!data) {
     return <>loading...</>;
   }
+  if (page > 42) {
+    setNextPage(false);
+  }
 
   return (
     <div className="home">
@@ -38,8 +42,13 @@ const Home = () => {
       <InfiniteScroll
         dataLength={page * 20}
         next={() => setPage((prevPage) => prevPage + 1)}
-        hasMore={true}
+        hasMore={nextPage}
         loader={<h4>Loading...</h4>}
+        endMessage={
+          <p style={{ textAlign: "center" }}>
+            <b>Ya no hay mas personajes.. por ahora</b>
+          </p>
+        }
       >
         <div className="home__character__card">
           {data.results.map((character) => (

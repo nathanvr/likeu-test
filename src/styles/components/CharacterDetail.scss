@@ -28,3 +28,13 @@
     cursor: pointer;
   }
 }
+
+.modal__title {
+  color: var(--fire);
+}
+
+.modal__description {
+  span {
+    color: var(--fire);
+  }
+}

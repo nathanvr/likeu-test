@@ -6,14 +6,14 @@ import { Modal } from "@mantine/core";
 const CharacterDetail = () => {
   const { id } = useParams();
   const [character, setCharacter] = useState(null);
-  const [episode1, setEpisode] = useState(null);
+  const [episode, setEpisode] = useState(null);
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
     fetch(`https://rickandmortyapi.com/api/character/${id}`)
       .then((response) => response.json())
       .then((data) => setCharacter(data));
-  }, [id]);
+  }, []);
 
   if (!character) {
     return <>loading...</>;
@@ -37,12 +37,13 @@ const CharacterDetail = () => {
         <div className="character__episodes__btncontainer">
           {numEpisodes.map((episode) => (
             <button
-              type="button"
+              key={episode}
               onClick={() => {
-                setOpen(true);
-                fetch(`​https://rickandmortyapi.com/api/episode/${episode}`)
+                fetch(`https://rickandmortyapi.com/api/episode/${episode}`)
                   .then((response) => response.json())
                   .then((data) => setEpisode(data));
+
+                setOpen(true);
               }}
             >
               <p>Cap {episode}</p>
@@ -51,17 +52,31 @@ const CharacterDetail = () => {
         </div>
         <Modal
           opened={open}
-          onClose={() => setOpen(false)}
+          onClose={() => {
+            setEpisode(null);
+            setOpen(false);
+          }}
           title="Detalle del Episodio"
         >
-          <h3>Hola</h3>
+          {episode ? (
+            <div className="modal">
+              <div className="modal__title">
+                <h3>
+                  {episode.episode} - {episode.name}
+                </h3>
+                <hr></hr>
+              </div>
+              <div className="modal__description">
+                <p>
+                  Episodio # <span>{episode.id}</span> estrenado en:{" "}
+                  {episode.air_date}
+                </p>
+              </div>
+            </div>
+          ) : (
+            <div>...loading</div>
+          )}
         </Modal>
-
-        {/* {numEpisodes.map((episode) => (
-          <Link to={`/episode/${episode}`} key={episode}>
-            <div>Cap {episode}</div>
-          </Link>
-        ))} */}
       </div>
     </div>
   );
